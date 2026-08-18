@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode/master/extensions/extension-schema.json",
+  "name": "velocity-html",
+  "displayName": "Velocity HTML",
+  "description": "Syntax highlighting for Apache Velocity templates embedded in HTML.",
+  "version": "0.0.1",
+  "publisher": "jtax.dev",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "velocity-html",
+        "aliases": [
+          "Velocity HTML",
+          "velocity-html"
+        ],
+        "extensions": [
+          ".vm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "velocity-html",
+        "scopeName": "text.html.velocity",
+        "path": "./syntaxes/velocity-html.tmLanguage.json"
+      }
+    ]
+  }
+}
