@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Velocity HTML",
+  "scopeName": "text.html.velocity",
+  "patterns": [
+    {
+      "include": "#velocity-comments"
+    },
+    {
+      "include": "#velocity-directives"
+    },
+    {
+      "include": "#velocity-variables"
+    },
+    {
+      "include": "text.html.basic"
+    }
+  ],
+  "repository": {
+    "velocity-comments": {
+      "patterns": [
+        {
+          "name": "comment.line.velocity",
+          "match": "##.*$"
+        },
+        {
+          "name": "comment.block.velocity",
+          "begin": "#\\*",
+          "end": "\\*#"
+        }
+      ]
+    },
+    "velocity-directives": {
+      "patterns": [
+        {
+          "name": "keyword.control.velocity",
+          "match": "#\\b(?:if|else|elseif|end|foreach|set|break|stop|macro|endmacro|include|parse|evaluate|define|literal|endliteral)\\b"
+        }
+      ]
+    },
+    "velocity-variables": {
+      "patterns": [
+        {
+          "name": "variable.other.velocity",
+          "match": "\\$!?[A-Za-z_][A-Za-z0-9_]*(?:\\.[A-Za-z_][A-Za-z0-9_]*)*"
+        },
+        {
+          "name": "variable.other.velocity",
+          "match": "\\$\\{[^}]+\\}"
+        }
+      ]
+    }
+  }
+}
